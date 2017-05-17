@@ -1,0 +1,34 @@
+{
+  "name": "sensor-monitor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "webpack --watch",
+    "build": "webpack --env.prod",
+    "start": "node ./app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.15.2",
+    "redis": "2.7.1",
+    "socket.io": "2.0.1"
+  },
+  "devDependencies": {
+    "react": "15.5.4",
+    "highcharts": "5.0.11",
+    "react-dom": "15.5.4",
+    "axios": "0.16.1",
+    "babel-core": "6.24.1",
+    "babel-loader": "7.0.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-es2016": "6.24.1",
+    "babel-preset-es2017": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "0.28.1",
+    "extract-text-webpack-plugin": "2.1.0",
+    "style-loader": "0.17.0",
+    "webpack": "2.5.1"
+  },
+  "description": ""
+}

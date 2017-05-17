@@ -1,0 +1,22 @@
+.App {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+aside {
+  flex: 0 0 300px;
+  overflow-y: auto;
+  height: 100%;
+  position: relative;
+}
+
+aside ul {
+  top: 50%;
+  transform: translateY(50%);
+}
+
+section {
+  flex: 1 1 auto;
+  padding: 10px;
+}

@@ -1,0 +1,47 @@
+.SensorList__item {
+  list-style: none;
+  padding: 1.5em 0.5em;
+  cursor: pointer;
+}
+.SensorList__item.active {
+  background-color: #ddeaff;
+}
+.SensorList__item.active .SensorList__title{
+  font-weight: 700;
+  color: darkblue
+}
+.SensorList__item:hover {
+  background-color: #CCCCCC;
+}
+.SensorList__item:not(:last-of-type){
+  border-bottom: 1px solid gray;
+}
+
+.SensorList__icon,
+.SensorList__text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.SensorList__icon {
+  width: 2em;
+  height: 2em;
+}
+
+.SensorList__icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.SensorList__text{
+  margin-left: 1em;
+}
+
+.SensorList__title{
+  font-size: 1.2em;
+  line-height:2em;
+}
+
+.SensorList__time{
+  color: grey
+}

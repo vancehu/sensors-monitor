@@ -1,0 +1,10 @@
+.RangeSelector {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.RangeSelector label{
+  margin-right: 30px;
+}
+.RangeSelector input[type="text"]{
+  width: 50px;
+}

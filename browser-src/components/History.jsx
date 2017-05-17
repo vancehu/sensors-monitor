@@ -20,14 +20,14 @@ export class History extends PureComponent {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.name !== this.props.name) {
+    if (nextProps.range !== this.props.range || nextProps.name !== this.props.name) {
       this.setState({ limit: Math.ceil(nextProps.range / nextProps.sensor.interval) });
 
       if (this.props.name) {
         socket.off(this.props.name, this.historyListener);
       }
 
-      axios.post('/sensors/' + nextProps.name)
+      axios.post('/sensors/' + nextProps.name + '?range=' + nextProps.range)
         .then((resp) => {
           if (resp.status !== 200) {
             return Promise.reject();
@@ -62,12 +62,12 @@ export class History extends PureComponent {
     if (name) {
       const len = Object.keys(history).length;
       const average = len > 0 ?
-        (timestamps.reduce((sum, timestamp) => sum + history[timestamp], 0) / Math.min(len,limit)).toFixed(2):
+        (timestamps.reduce((sum, timestamp) => sum + history[timestamp], 0) / Math.min(len, limit)).toFixed(2) :
         'N/A';
       return <div className="History">
         <Chart history={history} end={parseInt(timestamps[timestamps.length - 1])} range={range} max={sensor.max} min={sensor.min} name={name} />
         <div className="History__stats">Average value of the past {range} second{range && 's'}: {average}</div>
-      </div>
+        </div>
     } else {
       return <div className="History__fetching"></div>
     }

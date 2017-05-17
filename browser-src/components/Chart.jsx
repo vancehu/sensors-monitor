@@ -12,6 +12,8 @@ export class Chart extends PureComponent {
   }
   componentDidMount() {
     this.chart = Highcharts.chart(this.refs.chart, {
+      chart: {    animation: false},
+      plotOptions: { series: { animation: false } },
       yAxis: { title: { text: 'Value' } },
       xAxis: { title: { text: 'Time' }, type: 'datetime' },
       legend: { enabled: false },

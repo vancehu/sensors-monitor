@@ -60,8 +60,9 @@ export class History extends PureComponent {
     const { history, limit } = this.state;
     const timestamps = Object.keys(history);
     if (name) {
-      const average = Object.keys(history).length > 0 ?
-        (timestamps.reduce((sum, timestamp) => sum + history[timestamp], 0) / limit).toFixed(2):
+      const len = Object.keys(history).length;
+      const average = len > 0 ?
+        (timestamps.reduce((sum, timestamp) => sum + history[timestamp], 0) / Math.min(len,limit)).toFixed(2):
         'N/A';
       return <div className="History">
         <Chart history={history} end={parseInt(timestamps[timestamps.length - 1])} range={range} max={sensor.max} min={sensor.min} name={name} />
